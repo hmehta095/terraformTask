@@ -4,16 +4,21 @@ module "dev" {
     environment ={
         name           = "stg"
     }
-storage_buckets = [
-    {
-      name               = "my-storage-lrs"
-      region             = "ca-central-1"
-      public_access      = false
-    },
-    {
-      name               = "my-storage-ragrs"
-      region             = "ca-east-1"
-      public_access      = true
-    }
-  ]
+
+    kms_key_alias={
+        kms_key_alias = "nonprod-key"
+    }    
+
+    storage_buckets_lrs ={
+        name               = "my-storage-lrs"
+        provider           = "aws.central"
+        region             = "ca-central-1"
+        access             = private
+      }
+    storage_buckets_ragr ={
+        name               = "my-storage-ragrs"
+        provider           = "aws.east"
+        region             = "ca-east-1"
+        access             = "public-read"
+      }
 }
