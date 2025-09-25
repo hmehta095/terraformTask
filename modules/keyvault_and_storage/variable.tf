@@ -12,11 +12,16 @@ variable "kms_key_alias" {
   type        = string
 }
 
-variable "storage_buckets" {
-  description = "List of storage bucket configs with properties"
-  type = list(object({
-    name              = string
-    region            = string
-    public_access     = bool
-  }))
-}
+variable "storage_buckets_lrs" ={
+    name               = string
+    provider           = string
+    region             = string
+    access             = string
+    }
+variable "storage_buckets_ragr" ={
+    name               = string
+    provider           = string
+    region             = string
+    access             = string
+    }
+
