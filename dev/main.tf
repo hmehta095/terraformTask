@@ -3,6 +3,7 @@ module "dev" {
     
     environment ={
         name           = "dev"
+        kms_key_alias = "nonprod-key"
     }
 storage_buckets = [
     {
