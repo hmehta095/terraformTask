@@ -13,7 +13,7 @@ module "prod" {
         name               = "my-storage-lrs"
         provider           = "aws.central"
         region             = "ca-central-1"
-        access             = private
+        access             = "private"
       }
     storage_buckets_ragr ={
         name               = "my-storage-ragrs"

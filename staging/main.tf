@@ -1,4 +1,4 @@
-module "dev" {
+module "staging" {
     source = "../modules/keyvault_and_storage"
     
     environment ={
@@ -13,7 +13,7 @@ module "dev" {
         name               = "my-storage-lrs"
         provider           = "aws.central"
         region             = "ca-central-1"
-        access             = private
+        access             = "private"
       }
     storage_buckets_ragr ={
         name               = "my-storage-ragrs"
