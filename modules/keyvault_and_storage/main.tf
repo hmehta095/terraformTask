@@ -24,7 +24,7 @@ resource "aws_s3_bucket" "lrs" {
 }
 
 resource "aws_s3_bucket_public_access_block" "lrs" {
-  provider = aws.central
+  provider = storage_buckets_lrs.provider
   bucket   = aws_s3_bucket.lrs.id
 
   block_public_acls       = true
@@ -46,7 +46,7 @@ resource "aws_s3_bucket" "ragr" {
 }
 
 resource "aws_s3_bucket_public_access_block" "ragr" {
-  provider = aws.central
+  provider = storage_buckets_ragr.provider
   bucket   = aws_s3_bucket.ragr.id
 
   block_public_acls       = false
